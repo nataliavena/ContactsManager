@@ -7,6 +7,15 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </head>
     <body>
+        <%= form_for(@contact) do |form| %>
+            <div class = "field">
+                <%= form.text_field :first_name %><br>
+                <%= form.text_field :last_name %><br>
+                <%= form.text_field :email %><br>
+                <%= form.text_field :phone %><br>
+            </div>
+                <%= form.submit "Create Contact" %>
+            <% end %>
         <%= link_to '<button type = "button" class = "btn btn-default">Cancel</button>'.html_safe, '/main' %>
     </body>
 </html>

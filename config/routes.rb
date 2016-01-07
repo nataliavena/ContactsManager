@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
-  root 'main#index'
   resources :main
-  get '/main' => 'main#index'
-  get '/main/:id' => 'main#show', as: :mainshow
-  get '/main/new' => 'main#new'
-  post 'main' => 'main#create'
-  get '/main/:id/edit' => 'main#edit', as: :editcontact
-  patch '/main/:id' => 'main#update'
+  root 'main#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

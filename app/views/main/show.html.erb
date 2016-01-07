@@ -13,18 +13,18 @@
         <div class="row">
 
             <div class ="col-sm-4">
-                <%= image_tag @level.image %>
+                <%= image_tag @contact.image %>
             </div>
             <div class="col-sm-8">
                 <h4>Full Name</h4>
-                    <%= @level.first_name + " " + @level.last_name %>
+                    <%= @contact.first_name + " " + @contact.last_name %>
                     <h4>Email</h4>
-                    <%= @level.email %>
+                    <%= @contact.email %>
                     <h4>Phone Number</h4>
-                    <%= @level.phone %>
+                    <%= @contact.phone %>
 
             </div>
-            <%= link_to "Edit Contact", editcontact_path(@level) %>
+            <%= link_to "Edit Contact", edit_main_path(@contact) %>
         </div>
     </body>
 </html>

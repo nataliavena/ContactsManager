@@ -11,13 +11,14 @@
         <h3>Edit Contacts</h3>
         <%= form_for(@contact) do |f| %>
         <div class="field">
-            <%=f.text_field :image%>
-            <%=f.text_field :first_name %>
-            <%=f.text_field :last_name %>
-            <%=f.text_field :email%>
-            <%=f.text_field :phone%>
+            <%= image_tag @contact.image %>
+            <%=f.text_field :first_name %><br>
+            <%=f.text_field :last_name %><br>
+            <%=f.text_field :email%><br>
+            <%=f.text_field :phone%> <br>
+            <%=f.text_field :image%><br>
         </div>
-        <%=f.submit "Edit Contact"%>
+        <%=f.submit "Edit Contact", class: "btn btn-primary"%>
         <%end%>
         <%= link_to '<button type = "button" class = "btn btn-default">Cancel</button>'.html_safe, '/main' %>
     </body>

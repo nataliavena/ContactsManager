@@ -1,21 +1,24 @@
-<!DOCTYPE html>
-    <html lang=“en”>
-    <head>
-        <meta charset=“utf-8”>
-        <link rel="stylesheet"href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <%= form_for(@contact) do |form| %>
+    <%= render 'header' %>
+        <h4>New Contact</h4>
+        <%= form_for :main do |form| %>
             <div class = "field">
-                <%= form.text_field :first_name %><br>
-                <%= form.text_field :last_name %><br>
-                <%= form.text_field :email %><br>
-                <%= form.text_field :phone %><br>
+                <p>
+                    <%= form.label :First_Name %> <br>
+                    <%= form.text_field :first_name %><br>
+                    <%= form.label :Last_Name %><br>
+                    <%= form.text_field :last_name %><br>
+                    <%= form.label :Email %><br>
+                    <%= form.text_field :email %><br>
+                    <%= form.label :Phone_Number %><br>
+                    <%= form.text_field :phone %><br>
+                    <%= form.label :Photo %><br>
+                    <%= form.file_field :image %>
+                </p>
             </div>
-                <%= form.submit "Create Contact" %>
-            <% end %>
-        <%= link_to '<button type = "button" class = "btn btn-default">Cancel</button>'.html_safe, '/main' %>
-    </body>
-</html>
+                <p>
+                    <%= form.submit "Create Contact", class: "btn btn-primary" %>
+        <% end %>
+
+                <%= link_to '<button type = "button" class = "btn btn-default">Cancel</button>'.html_safe, '/main' %>
+                </p>
+

@@ -1,30 +1,19 @@
-<!DOCTYPE html>
-<html lang=“en”>
-    <head>
-        <meta charset=“utf-8”>
-        <link rel="stylesheet"href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <h5>Contacts Manager</h5>
-        <h3>Contact Details</h3>
-        <%= link_to "View All", root_path %>
-        <div class="row">
-
-            <div class ="col-sm-4">
-                <%= image_tag @contact.image %>
-            </div>
-            <div class="col-sm-8">
-                <h4>Full Name</h4>
-                    <%= @contact.first_name + " " + @contact.last_name %>
-                    <h4>Email</h4>
-                    <%= @contact.email %>
-                    <h4>Phone Number</h4>
-                    <%= @contact.phone %>
-
-            </div>
-            <%= link_to "Edit Contact", edit_main_path(@contact) %>
-        </div>
-    </body>
-</html>
+  <%= render 'header' %>
+  <div class="container">
+  <h4>Contact Details</h4> <%= link_to '<button type = "button" class = "pull-right">View All</button>'.html_safe, root_path %>
+  <div class="row">
+    <div class ="col-sm-4">
+      <%= contact_avatar(@contact, class: 'media-object img-circle', style: 'width:200px;height:200px;') %>
+    </div>
+    <div class="col-sm-8">
+      <h4>Full Name</h4>
+      <%= @contact.first_name + " " + @contact.last_name %>
+      <h4>Email</h4>
+      <%= @contact.email %>
+      <h4>Phone Number</h4>
+      <%= @contact.phone %> <br><br>
+    </div>
+      <%= link_to "Edit Contact", edit_main_path(@contact), class: 'btn btn-primary'%>
+      <%= link_to "Delete Contact", delete_main_path(@contact), class: 'btn btn-default' %>
+  </div>
+  </div>

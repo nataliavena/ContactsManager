@@ -19,7 +19,7 @@ class MainController < ApplicationController
         @contact = Main.new(contact_params)
 
         if @contact.save
-            redirect_to main_path
+            redirect_to @contact
         else
             render 'new'
         end
@@ -29,15 +29,26 @@ class MainController < ApplicationController
         @contact = Main.find(params[:id])
 
         if @contact.update(contact_params)
-            redirect_to @article
+            redirect_to @contact
         else
             render 'edit'
         end
     end
 
+    def delete
+        @contact = Main.find(params[:id])
+    end
+
+    def destroy
+        @contact = Main.find(params[:id])
+        @contact.destroy
+
+        redirect_to main_index_path
+    end
+
     private
     def contact_params
-        params_require(:contact).permit(:image, :first_name, :last_name, :email, :phone)
+        params.require(:main).permit(:image, :first_name, :last_name, :email, :phone)
     end
 
 end

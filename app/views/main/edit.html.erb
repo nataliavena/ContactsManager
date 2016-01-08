@@ -1,25 +1,21 @@
-<!DOCTYPE html>
-    <html lang=“en”>
-    <head>
-        <meta charset=“utf-8”>
-        <link rel="stylesheet"href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <h5>Contacts Manager</h5>
-        <h3>Edit Contacts</h3>
-        <%= form_for(@contact) do |f| %>
-        <div class="field">
-            <%= image_tag @contact.image %>
-            <%=f.text_field :first_name %><br>
-            <%=f.text_field :last_name %><br>
-            <%=f.text_field :email%><br>
-            <%=f.text_field :phone%> <br>
-            <%=f.text_field :image%><br>
-        </div>
-        <%=f.submit "Edit Contact", class: "btn btn-primary"%>
-        <%end%>
-        <%= link_to '<button type = "button" class = "btn btn-default">Cancel</button>'.html_safe, '/main' %>
-    </body>
-</html>
+  <%= render 'header' %>
+  <div class="container">
+    <h4>Edit Contact</h4>
+    <%= form_for(@contact) do |f| %>
+      <div class="field">
+        <%= f.label :First_Name %><br>
+        <%= f.text_field :first_name %><br>
+        <%= f.label :Last_Name %><br>
+        <%= f.text_field :last_name %><br>
+        <%= f.label :Email %><br>
+        <%= f.text_field :email%><br>
+        <%= f.label :Phone %><br>
+        <%= f.text_field :phone%> <br>
+        <%= f.label :Photo %><br>
+        <%= f.file_field :image%><br>
+      </div>
+        <%=f.submit "Update Contact", class: "btn btn-primary"%>
+        <%= link_to '<button type = "button" class = "btn btn-default">Cancel</button>'.html_safe, main_path(@contact) %>
+    <%end%>
+
+  </div>

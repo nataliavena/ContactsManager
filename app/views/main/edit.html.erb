@@ -2,7 +2,12 @@
   <div class="container">
     <h4>Edit Contact</h4>
     <%= form_for(@contact) do |f| %>
-      <div class="field">
+      <form role ="form">
+        <div class="form-group">
+          <label for="firstname">First Name:</label>
+
+        </div>
+      </form>
         <%= f.label :First_Name %><br>
         <%= f.text_field :first_name %><br>
         <%= f.label :Last_Name %><br>
@@ -17,5 +22,4 @@
         <%=f.submit "Update Contact", class: "btn btn-primary"%>
         <%= link_to '<button type = "button" class = "btn btn-default">Cancel</button>'.html_safe, main_path(@contact) %>
     <%end%>
-
   </div>

@@ -2,24 +2,18 @@
   <div class="container">
     <h4>Edit Contact</h4>
     <%= form_for(@contact) do |f| %>
-      <form role ="form">
-        <div class="form-group">
-          <label for="firstname">First Name:</label>
-
-        </div>
-      </form>
-        <%= f.label :First_Name %><br>
-        <%= f.text_field :first_name %><br>
-        <%= f.label :Last_Name %><br>
-        <%= f.text_field :last_name %><br>
-        <%= f.label :Email %><br>
-        <%= f.text_field :email%><br>
-        <%= f.label :Phone %><br>
-        <%= f.text_field :phone%> <br>
-        <%= f.label :Photo %><br>
-        <%= f.file_field :image%><br>
-      </div>
-        <%=f.submit "Update Contact", class: "btn btn-primary"%>
-        <%= link_to '<button type = "button" class = "btn btn-default">Cancel</button>'.html_safe, main_path(@contact) %>
+      <%= f.label :First_Name %><br>
+      <%= f.text_field :first_name, class: 'form-control' %><br>
+      <%= f.label :Last_Name %><br>
+      <%= f.text_field :last_name, class: 'form-control' %><br>
+      <%= f.label :Email %><br>
+      <%= f.text_field :email, class: 'form-control'%><br>
+      <%= f.label :Phone %><br>
+      <%= f.text_field :phone, class: 'form-control'%> <br>
+      <%= f.label :Photo %><br>
+      <%= f.file_field :image, class: 'form-control'%><br>
+      <%=f.submit "Update Contact", class: "btn btn-primary"%>
+      <%= link_to '<button type = "button" class = "btn btn-default">Cancel</button>'.html_safe, main_path(@contact) %>
     <%end%>
   </div>
+

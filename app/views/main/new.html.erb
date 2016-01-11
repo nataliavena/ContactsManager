@@ -1,24 +1,23 @@
-    <%= render 'header' %>
-        <h4>New Contact</h4>
-        <%= form_for :main do |form| %>
-            <div class = "field">
-                <p>
-                    <%= form.label :First_Name %> <br>
-                    <%= form.text_field :first_name %><br>
-                    <%= form.label :Last_Name %><br>
-                    <%= form.text_field :last_name %><br>
-                    <%= form.label :Email %><br>
-                    <%= form.text_field :email %><br>
-                    <%= form.label :Phone_Number %><br>
-                    <%= form.text_field :phone %><br>
-                    <%= form.label :Photo %><br>
-                    <%= form.file_field :image %>
-                </p>
-            </div>
-                <p>
-                    <%= form.submit "Create Contact", class: "btn btn-primary" %>
-        <% end %>
-
-                <%= link_to '<button type = "button" class = "btn btn-default">Cancel</button>'.html_safe, '/main' %>
-                </p>
+  <%= render 'header' %>
+  <div class ="container">
+    <h4>New Contact</h4>
+    <%= form_for :main do |form| %>
+      <div class = "field">
+        <%= form.label :First_Name %> <br>
+        <%= form.text_field :first_name, class: 'form-control' %><br>
+        <%= form.label :Last_Name %><br>
+        <%= form.text_field :last_name, class: 'form-control' %><br>
+        <%= form.label :Email %><br>
+        <%= form.text_field :email, class: 'form-control' %><br>
+        <%= form.label :Phone_Number %><br>
+        <%= form.text_field :phone, class: 'form-control' %><br>
+        <%= form.label :Photo %><br>
+        <%= form.file_field :image, class: 'form-control' %><br>
+      </div>
+      <p>
+        <%= form.submit "Create Contact", :flash => {:success => "Contact created!" }, class: "btn btn-primary" %>
+        <%= link_to '<button type = "button" class = "btn btn-default">Cancel</button>'.html_safe, '/main' %>
+      </p>
+    <% end %>
+  </div>
 

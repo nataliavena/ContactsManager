@@ -19,7 +19,7 @@ class MainController < ApplicationController
         @contact = Main.new(contact_params)
 
         if @contact.save
-            redirect_to @contact
+            redirect_to @contact, :notice => "Contact created!"
         else
             render 'new'
         end

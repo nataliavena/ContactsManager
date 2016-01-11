@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+  root 'session#new'
   resources :main do
     get :delete, on: :member
   end
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/logout' => 'session#destroy'
+  resources :user
+  resources :session
   get "avatar/:size/:background/:text" => Dragonfly.app.endpoint { |params, app|
   app.generate(:initial_avatar, URI.unescape(params[:text]), { size: params[:size], background_color: params[:background] })}
-  root 'main#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

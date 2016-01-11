@@ -4,7 +4,7 @@
         <p class="navbar-brand">Contacts Manager</p>
       </div>
       <ul class ="nav navbar-nav navbar-right">
-        <li><a href = "#"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+        <li><%= link_to "Logout", logout_path, method: :delete, class: "glyphicon glyphicon-log-out" %></li>
       </ul>
     </div>
   </nav>

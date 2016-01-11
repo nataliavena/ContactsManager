@@ -1,11 +1,11 @@
   <%= render 'header' %>
-  <h4>Contacts</h4>
-  <%= link_to '<button type = "button" class = "btn btn-primary pull-right">New Contact</button>'.html_safe, '/main/new' %>
-  <% @contacts.each do |contact| %>
-    <div class = "container-fixed">
+  <div class = "container">
+    <h4>Contacts</h4>
+    <%= link_to '<button type = "button" class = "btn btn-primary pull-right">New Contact</button>'.html_safe, '/main/new' %><br><br>
+    <% @contacts.each do |contact| %>
       <table class="table table-hover">
-        <tr onclick="location.href='<%= main_path(contact) %>'">
-          <td><%= contact_avatar(contact, class: 'media-object img-circle', style: 'width:64px;height:64px;') %></td>
+        <tr onclick="location.href='<%= main_path(contact) %>'" class="text-">
+          <td><%= contact_avatar(contact, class: 'media-object img-circle', style: 'width:44px;height:44px;') %></td>
           <td><%= contact.first_name + " " + contact.last_name %></td>
           <td><%= contact.email %></td>
           <td><%= contact.phone %></td>

@@ -31,6 +31,7 @@ class MainController < ApplicationController
         @contact = Main.find(params[:id])
 
         if @contact.update(contact_params)
+            flash[:success] ="Info updated"
             redirect_to @contact
         else
             render 'edit'
@@ -43,7 +44,7 @@ class MainController < ApplicationController
 
     def destroy
         @contact = Main.find(params[:id])
-        flash[:info] = "Contact deleted"
+        flash[:success] = "Contact deleted"
         @contact.destroy
 
         redirect_to main_index_path

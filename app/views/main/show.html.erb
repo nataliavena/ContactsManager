@@ -1,6 +1,7 @@
   <%= render 'header' %>
   <div class="container">
-  <h4>Contact Details</h4> <%= link_to '<button type = "button" class = "pull-right">View All</button>'.html_safe, main_index_path %>
+  <h4>Contact Details</h4> <%= link_to '<button type = "button" class = "pull-right">View All</button>'.html_safe, main_index_path %><br><br>
+    <%= flash_messages %>
   <div class="row">
     <div class ="col-sm-4">
       <%= contact_avatar(@contact, class: 'media-object img-circle', style: 'width:200px;height:200px;') %>

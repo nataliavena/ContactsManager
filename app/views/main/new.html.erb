@@ -1,7 +1,7 @@
   <%= render 'header' %>
   <div class ="container">
     <h4>New Contact</h4>
-    <%= form_for :main do |form| %>
+    <%= form_for :main, url: main_index_path do |form|, class: "data-toggle='validator'" %>
       <div class = "field">
         <%= form.label :First_Name %> <br>
         <%= form.text_field :first_name, class: 'form-control' %><br>

@@ -8,6 +8,7 @@
   <% provide(:title, "Log In") %>
 
   <div class = "container">
+    <%= flash_messages %>
     <h3>Log In</h3>
 
     <%= form_for(:session, url: login_path) do |f| %>

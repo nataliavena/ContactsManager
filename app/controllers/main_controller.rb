@@ -1,4 +1,5 @@
 class MainController < ApplicationController
+    before_action :require_user
     def index
         @contacts = Main.all
     end
@@ -19,7 +20,8 @@ class MainController < ApplicationController
         @contact = Main.new(contact_params)
 
         if @contact.save
-            redirect_to @contact, :notice => "Contact created!"
+            flash[:success] = "Contact created!"
+            redirect_to @contact
         else
             render 'new'
         end
@@ -41,6 +43,7 @@ class MainController < ApplicationController
 
     def destroy
         @contact = Main.find(params[:id])
+        flash[:info] = "Contact deleted"
         @contact.destroy
 
         redirect_to main_index_path

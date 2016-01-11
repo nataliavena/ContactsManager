@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   delete '/logout' => 'session#destroy'
   resources :user
-  resources :session
+
   get "avatar/:size/:background/:text" => Dragonfly.app.endpoint { |params, app|
-  app.generate(:initial_avatar, URI.unescape(params[:text]), { size: params[:size], background_color: params[:background] })}
+    app.generate(:initial_avatar, URI.unescape(params[:text]), { size: params[:size], background_color: params[:background] })
+    }, as: :avatar
 
 
   # The priority is based upon order of creation: first created -> highest priority.

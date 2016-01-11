@@ -8,12 +8,14 @@ class SessionController < ApplicationController
       session[:user_id] = user.id
       redirect_to main_index_path
     else
+      flash[:error] = "Incorrect login"
       render 'new'
     end
   end
 
     def destroy
       session[:user_id] = nil
-      redirect_to root_url, :notice => "Logged out!"
+      flash[:info] = "Logged out"
+      redirect_to root_url
     end
 end

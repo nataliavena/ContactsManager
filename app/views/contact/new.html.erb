@@ -1,7 +1,7 @@
   <%= render 'header' %>
   <div class ="container">
     <h4>New Contact</h4>
-    <%= form_for :main, url: main_index_path do |form| %>
+    <%= form_for :contact, url: contact_index_path do |form| %>
       <div class = "field">
         <%= form.label :First_Name %> <br>
         <%= form.text_field :first_name, class: 'form-control' %><br>
@@ -16,7 +16,7 @@
       </div>
       <p>
         <%= form.submit "Create Contact", :flash => {:success => "Contact created!" }, class: "btn btn-primary" %>
-        <%= link_to '<button type = "button" class = "btn btn-default">Cancel</button>'.html_safe, '/main' %>
+        <%= link_to '<button type = "button" class = "btn btn-default">Cancel</button>'.html_safe, '/contact' %>
       </p>
     <% end %>
   </div>

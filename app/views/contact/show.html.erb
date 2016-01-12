@@ -1,6 +1,6 @@
   <%= render 'header' %>
   <div class="container">
-  <h4>Contact Details</h4> <%= link_to '<button type = "button" class = "pull-right btn btn-default">View All</button>'.html_safe, main_index_path %><br><br>
+  <h4>Contact Details</h4> <%= link_to '<button type = "button" class = "pull-right btn btn-default">View All</button>'.html_safe, contact_index_path %><br><br>
     <%= flash_messages %>
   <div class="row">
     <div class ="col-sm-4">
@@ -14,7 +14,7 @@
       <h4>Phone Number</h4>
       <%= @contact.phone %> <br><br>
     </div>
-      <%= link_to "Edit Contact", edit_main_path(@contact), class: 'btn btn-primary'%>
-      <%= link_to "Delete Contact", delete_main_path(@contact), class: 'btn btn-default' %>
+      <%= link_to "Edit Contact", edit_contact_path(@contact), class: 'btn btn-primary'%>
+      <%= link_to "Delete Contact", delete_contact_path(@contact), class: 'btn btn-default' %>
   </div>
   </div>

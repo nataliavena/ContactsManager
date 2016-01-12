@@ -1,4 +1,4 @@
-class Main < ActiveRecord::Base
+class Contact < ActiveRecord::Base
   extend Dragonfly::Model
   include Avatarable
 

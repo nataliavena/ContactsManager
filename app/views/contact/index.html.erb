@@ -2,11 +2,11 @@
   <div class = "container">
     <h4>Contacts</h4>
   <%= flash_messages %><br>
-    <%= link_to '<button type = "button" class = "btn btn-primary pull-right">New Contact</button>'.html_safe, '/main/new' %><br><br>
+    <%= link_to '<button type = "button" class = "btn btn-primary pull-right">New Contact</button>'.html_safe, '/contact/new' %><br><br>
     <% for contact in @contacts.sort{|a,b| a.first_name <=> b.first_name } %>
       <table class="table table-condensed table-hover">
         <tbody>
-          <tr onclick="location.href='<%= main_path(contact) %>'" class="text-">
+          <tr onclick="location.href='<%= contact_path(contact) %>'" class="text-">
             <td><%= contact_avatar(contact, class: 'media-object img-circle', style: 'width:44px;height:44px;') %></td>
             <td><%= contact.first_name + " " + contact.last_name %></td>
             <td><%= contact.email %></td>

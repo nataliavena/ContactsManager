@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'session#new'
-  resources :main do
+  resources :contact do
     get :delete, on: :member
   end
   get '/login' => 'session#new'

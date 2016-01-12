@@ -6,7 +6,7 @@ class SessionController < ApplicationController
     user = User.find_by(login: params[:session][:login])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to main_index_path
+      redirect_to contact_index_path
     else
       flash[:error] = "Incorrect login"
       render 'new'

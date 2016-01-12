@@ -4,6 +4,6 @@
   <div class ="alert alert-warning">
       Are you sure you want to delete this contact? This action cannot be undone.
   </div>
-  <%= link_to "Delete Contact", main_path(@contact), method: :delete, class: 'btn btn-danger' %>
-  <%= link_to "Cancel", main_path(@contact), class: 'btn btn-default' %>
+  <%= link_to "Delete Contact", contact_path(@contact), method: :delete, class: 'btn btn-danger' %>
+  <%= link_to "Cancel", contact_path(@contact), class: 'btn btn-default' %>
 </div>

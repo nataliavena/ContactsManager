@@ -5,5 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-m1 = Main.create(image: "http://autopilotonlinesuccess.com/wp-content/uploads/2009/11/royalty-free-multimedia.jpg", first_name: "Natalia", last_name: "Vilkarsis", email: "nataliav@live.ca", phone: "905-741-1862")
-Level.create(image: "http://autopilotonlinesuccess.com/wp-content/uploads/2009/11/royalty-free-multimedia.jpg", first_name: "Natalia", last_name: "Vilkarsis", email: "nataliav@live.ca", phone: "905-741-1862", main_id: m1.id)
+m1 = Contact.create(image: "http://autopilotonlinesuccess.com/wp-content/uploads/2009/11/royalty-free-multimedia.jpg", first_name: "Natalia", last_name: "Vilkarsis", email: "nataliav@live.ca", phone: "905-741-1862")

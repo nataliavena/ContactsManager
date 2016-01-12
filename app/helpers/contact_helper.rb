@@ -1,4 +1,4 @@
-module MainHelper
+module ContactHelper
   def contact_avatar(contact, options = {})
     if contact.image.nil?
       image_tag contact.avatar_url, options
@@ -7,4 +7,3 @@ module MainHelper
     end
   end
 end
-

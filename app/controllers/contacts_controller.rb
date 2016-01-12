@@ -1,11 +1,12 @@
-class ContactController < ApplicationController
+class ContactsController < ApplicationController
   before_action :require_user
+  before_action :find_contact, except: [:index, :new, :create]
+
   def index
-    @contacts = Contact.all
+    @contacts = current_user.contacts
   end
 
   def show
-    @contact = Contact.find(params[:id])
   end
 
   def new
@@ -13,11 +14,10 @@ class ContactController < ApplicationController
   end
 
   def edit
-    @contact = Contact.find(params[:id])
   end
 
   def create
-    @contact = Contact.new(contact_params)
+    @contact = current_user.contacts.new(contact_params)
 
     if @contact.save
       flash[:success] = "Contact created!"
@@ -28,8 +28,6 @@ class ContactController < ApplicationController
   end
 
   def update
-    @contact = Contact.find(params[:id])
-
     if @contact.update(contact_params)
       flash[:success] ="Info updated"
       redirect_to @contact
@@ -39,19 +37,23 @@ class ContactController < ApplicationController
   end
 
   def delete
-    @contact = Contact.find(params[:id])
   end
 
   def destroy
-    @contact = Contact.find(params[:id])
     flash[:success] = "Contact deleted"
     @contact.destroy
 
-    redirect_to contact_index_path
+    redirect_to contacts_path
   end
 
   private
+
   def contact_params
     params.require(:contact).permit(:image, :first_name, :last_name, :email, :phone)
   end
+
+  def find_contact
+    @contact = current_user.contacts.find(params[:id])
+  end
 end
+
